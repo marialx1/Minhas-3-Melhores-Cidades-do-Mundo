@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventuras Globais - Minhas 3 Cidades Favoritas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&family=Lora&family=Raleway:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===============================
+       ESTILO GERAL DO BLOG
+    ================================= */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff8f0;
+      color: #3b1f2b;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* ===============================
+       CABEÇALHO E MENU
+    ================================= */
+    header {
+      background: linear-gradient(135deg, #f4c2c2, #f8e1e7);
+      padding: 2.5rem 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #b03060;
+      margin-bottom: 0.5rem;
+      animation: slideDown 1.3s ease;
+    }
+
+    header p {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      color: #4b2c3f;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      background-color: #f4c2c2;
+      border-top: 2px solid #b03060;
+      border-bottom: 2px solid #b03060;
+    }
+
+    nav ul li {
+      margin: 0.8rem 1.2rem;
+    }
+
+    nav ul li a {
+      font-family: 'Raleway', sans-serif;
+      text-decoration: none;
+      color: #4b2c3f;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b03060;
+      text-shadow: 0 0 8px rgba(176, 48, 96, 0.5);
+      transform: scale(1.1);
+    }
+
+    /* ===============================
+       CONTEÚDO PRINCIPAL
+    ================================= */
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #b03060;
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      color: #6d4c5b;
+      font-family: 'Lora', serif;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "✈️ ";
+    }
+
+    /* ===============================
+       IMAGENS E FIGURAS
+    ================================= */
+    figure {
+      margin: 2rem 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(176, 48, 96, 0.3);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(176, 48, 96, 0.6);
+    }
+
+    figcaption {
+      font-style: italic;
+      color: #5c3647;
+      margin-top: 0.5rem;
+    }
+
+    /* ===============================
+       FORMULÁRIO DE COMENTÁRIOS
+    ================================= */
+    #comentarios {
+      background-color: #fce6ec;
+      padding: 2rem;
+      border-radius: 20px;
+      margin-top: 3rem;
+      box-shadow: 0 0 10px rgba(176, 48, 96, 0.2);
+    }
+
+    form {
+      margin-top: 1.5rem;
+    }
+
+    input, textarea {
+      width: 80%;
+      max-width: 600px;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 2px solid #f4c2c2;
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #b03060;
+      box-shadow: 0 0 8px rgba(176, 48, 96, 0.4);
+    }
+
+    button {
+      background-color: #b03060;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d94f75;
+      transform: scale(1.05);
+    }
+
+    /* ===============================
+       RODAPÉ
+    ================================= */
+    footer {
+      background-color: #f8e1e7;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #4b2c3f;
+      margin-top: 3rem;
+      box-shadow: 0 -2px 10px rgba(176, 48, 96, 0.2);
+    }
+
+    /* ===============================
+       ANIMAÇÕES
+    ================================= */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* ===============================
+       RESPONSIVIDADE
+    ================================= */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Aventuras Globais</h1>
+    <p>Descubra as minhas 3 cidades favoritas ao redor do mundo!</p>
+
+    <nav>
+      <ul>
+        <li><a href="#paris">Paris</a></li>
+        <li><a href="#tokyo">Tóquio</a></li>
+        <li><a href="#newyork">Nova York</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="paris">
+      <h2>1️⃣ Paris, França</h2>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Paris_Night.jpg" alt="Paris à noite">
+        <figcaption>A encantadora Paris iluminada à noite</figcaption>
+      </figure>
+      <p>Paris é uma cidade que respira arte, história e romance. Caminhar às margens do rio Sena ou admirar a Torre Eiffel ao pôr do sol é uma experiência mágica.</p>
+      <h3>Atrações imperdíveis:</h3>
+      <ul>
+        <li>Torre Eiffel</li>
+        <li>Museu do Louvre</li>
+        <li>Catedral de Notre-Dame</li>
+      </ul>
+      <h3>Gastronomia:</h3>
+      <p>Croissants, queijos e vinhos são apenas o começo. A culinária parisiense é uma explosão de sabores sofisticados e apaixonantes.</p>
+    </section>
+
+    <section id="tokyo">
+      <h2>2️⃣ Tóquio, Japão</h2>
+      <figure>
+        <img src="1.webp" alt="Skyline de Tóquio">
+        <figcaption>O contraste entre tradição e modernidade em Tóquio</figcaption>
+      </figure>
+      <p>Tóquio é uma metrópole futurista onde tecnologia e cultura tradicional convivem em harmonia. Cada esquina revela algo novo e surpreendente.</p>
+      <h3>Principais pontos turísticos:</h3>
+      <ul>
+        <li>Templo Senso-ji</li>
+        <li>Cruzamento de Shibuya</li>
+        <li>Torre de Tóquio</li>
+      </ul>
+      <h3>Culinária:</h3>
+      <p>Sushi, ramen e takoyaki fazem parte da incrível experiência gastronômica japonesa. Comer em Tóquio é uma verdadeira aventura!</p>
+    </section>
+
+    <section id="newyork">
+      <h2>3️⃣ Nova York, EUA</h2>
+      <figure>
+        <img src="new york.webp" alt="Skyline de Nova York">
+        <figcaption>O icônico horizonte de Nova York visto de Manhattan</figcaption>
+      </figure>
+      <p>Nova York é uma cidade que nunca dorme — vibrante, multicultural e cheia de energia. É impossível não se encantar com sua diversidade e ritmo acelerado.</p>
+      <h3>Lugares para visitar:</h3>
+      <ul>
+        <li>Estátua da Liberdade</li>
+        <li>Central Park</li>
+        <li>Times Square</li>
+      </ul>
+      <h3>Comidas típicas:</h3>
+      <p>De pizzas de rua a restaurantes estrelados, Nova York é um paraíso para quem ama boa comida.</p>
+    </section>
+
+    <section id="comentarios">
+      <h2>💬 Deixe seu comentário</h2>
+      <p>Qual dessas cidades você gostaria de visitar?</p>
+      <form onsubmit="enviarComentario(event)">
+        <input type="text" id="nome" placeholder="Seu nome" required><br>
+        <textarea id="mensagem" rows="4" placeholder="Escreva seu comentário aqui..." required></textarea><br>
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="confirmacao" style="display:none; color:#b03060; font-weight:bold; margin-top:10px;">✅ Comentário enviado com sucesso!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Aventuras Globais | Criado por Maria Luísa ✈️</p>
+  </footer>
+
+  <script>
+    function enviarComentario(event) {
+      event.preventDefault();
+      document.getElementById('confirmacao').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
